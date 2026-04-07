@@ -33,7 +33,7 @@
         }
 
         .container {
-            max-width: 800px;
+            max-width: 850px;
             margin: 40px auto;
             padding: 0 20px;
         }
@@ -73,6 +73,7 @@
             display: flex;
             gap: 10px;
             margin-bottom: 20px;
+            flex-wrap: wrap;
         }
 
         .tab-btn {
@@ -133,9 +134,19 @@
 
         .card h3 {
             margin-top: 0;
+            margin-bottom: 5px;
             color: var(--accent-color);
             display: flex;
             justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+        }
+
+        .job-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--text-color);
         }
 
         .date {
@@ -147,10 +158,24 @@
 
         ul {
             padding-left: 20px;
+            margin-top: 10px;
         }
 
         li {
             margin-bottom: 8px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .tags {
+            margin-top: 15px;
         }
 
         .tags span {
@@ -171,47 +196,77 @@
         <header>
             <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
             <h1>Edrico Septian Elyazar</h1>
-            <div class="subtitle">Mathematics | Computer Vision | IoT</div>
-            <div>Surabaya, Indonesia • <a href="https://github.com/YOUR_GITHUB"
-                    style="color: var(--accent-color);">GitHub</a></div>
+            <div class="subtitle">AI/ML Engineer | Computer Vision | Mathematics</div>
+            <div>Surabaya, Indonesia • <a href="https://github.com/YOUR_GITHUB">GitHub</a> • <a
+                    href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a></div>
         </header>
 
         <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('experience')">Experience</button>
+            <button class="tab-btn active" onclick="openTab('experience')">Experience & Leadership</button>
             <button class="tab-btn" onclick="openTab('projects')">Projects</button>
             <button class="tab-btn" onclick="openTab('education')">Education</button>
+            <button class="tab-btn" onclick="openTab('certifications')">Certifications</button>
         </div>
 
         <div id="experience" class="tab-content active">
             <div class="card">
-                <h3>PT XLSmart Telecom Sejahtera Tbk <span class="date">Aug 2025 – Jan 2026</span></h3>
-                <p><strong>Intern</strong></p>
+                <h3>PT XLSmart Telecom Sejahtera <span class="date">Jul 2025 – Dec 2025</span></h3>
+                <span class="job-title">AI/ML Engineer (Intern)</span>
                 <ul>
-                    <li>Developed a computer vision system to automate Personal Protective Equipment (PPE) detection.
-                    </li>
-                    <li>Configured and deployed a local MQTT broker using Mosquitto to facilitate efficient IoT data
-                        transmission.</li>
-                    <li>Recreated and documented the local broker implementation for technical reporting.</li>
+                    <li><strong>FRMS Development:</strong> Engineered the AI Engine for a Face Recognition Management
+                        System (~83% confidence) using FaceNet and Docker. Optimized for high-angle RTSP streams,
+                        triggering automatic door unlocking upon verified direct-gaze recognition.</li>
+                    <li><strong>Edge AI Optimization:</strong> Migrated a PPE detection model from SSD-MobileNet to YOLO
+                        on NVIDIA Jetson Nano. Leveraged TensorRT and engineered a custom frame-skipping algorithm to
+                        maintain up to 60 FPS on constrained hardware while boosting accuracy.</li>
+                    <li><strong>Centralized Multi-Camera Tracking:</strong> Utilized Python multiprocessing to implement
+                        Person Re-identification (ReID) algorithms, effectively tracking whole-body identities across
+                        non-overlapping camera views.</li>
+                    <li><strong>Collaborative Engineering:</strong> Bridged the gap between software logic and physical
+                        hardware control within a cross-functional team (AI, Backend, Frontend, Electrical).</li>
                 </ul>
+                <div class="tags">
+                    <span>Computer
+                        Vision</span><span>YOLO</span><span>TensorRT</span><span>Docker</span><span>Python</span><span>Jetson
+                        Nano</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>UKM Bridge ITS <span class="date">Dec 2023 – Dec 2024</span></h3>
+                <span class="job-title">President (Contract)</span>
+                <ul>
+                    <li>Led and managed the organization, conceptualizing a recruitment strategy that resulted in 200+
+                        new member sign-ups.</li>
+                    <li>Achieved >94% Organizational Accomplishments and secured 2nd place for Most Outstanding Sports
+                        Unit at ITS (Rektor UGM Cup) for promoting a culture of competitiveness.</li>
+                    <li>Collaborated with regional communities to expand networking, resulting in benchmarking visits
+                        with Airlangga Bridge Club and UBAYA Bridge Club.</li>
+                    <li>Supervised members in competitive events, developing more than 10 new bridge athletes and
+                        securing 4 medals.</li>
+                </ul>
+                <div class="tags">
+                    <span>Leadership</span><span>Strategic Planning</span><span>Cross-functional Collaboration</span>
+                </div>
             </div>
         </div>
 
         <div id="projects" class="tab-content">
             <div class="card">
-                <h3>Identity-Based Tracking System</h3>
+                <h3>Identity-Based Tracking & ReID System</h3>
                 <p>Engineered an advanced visual tracking system that identifies and follows individuals across frames.
                     Bypassed standard facial feature limitations by utilizing a comprehensive whole-body recognition
-                    approach.</p>
+                    approach to maintain consistent identity tracking.</p>
                 <div class="tags">
-                    <span>Computer Vision</span><span>Python</span><span>Biometrics</span>
+                    <span>Computer Vision</span><span>Python</span><span>Biometrics</span><span>ReID</span>
                 </div>
             </div>
             <div class="card">
-                <h3>Object Detection Engineering</h3>
-                <p>Implemented and tested various continuous object tracking solutions, heavily utilizing YOLO
-                    architectures within an Ubuntu Linux environment.</p>
+                <h3>Local IoT Network Integration</h3>
+                <p>Configured and deployed a local MQTT broker using Mosquitto to facilitate efficient IoT data
+                    transmission, integrating physical hardware events with backend processing logic.</p>
                 <div class="tags">
-                    <span>YOLO</span><span>Ubuntu</span><span>Object Tracking</span>
+                    <span>IoT</span><span>MQTT</span><span>Mosquitto</span><span>Linux</span>
                 </div>
             </div>
         </div>
@@ -226,6 +281,25 @@
                     <li><strong>Relevant Topics:</strong> Quantitative Analysis, Differential Equations,
                         Physics-Informed Neural Networks (PINNs).</li>
                 </ul>
+            </div>
+        </div>
+
+        <div id="certifications" class="tab-content">
+            <div class="card">
+                <h3>Coursera Professional Certificate</h3>
+                <span class="job-title">Coursera</span>
+                <p>Completed comprehensive professional training. <br>
+                    <a href="https://www.coursera.org/account/accomplishments/professional-cert/certificate/V0X92BL0CM9Y"
+                        target="_blank">Verify Credential ↗</a>
+                </p>
+            </div>
+            <div class="card">
+                <h3>Intro to Machine Learning</h3>
+                <span class="job-title">Kaggle</span>
+                <p>Foundational certification covering core machine learning concepts and model building. <br>
+                    <a href="https://www.kaggle.com/learn/certification/edricoseptianelyazar/intro-to-machine-learning"
+                        target="_blank">Verify Credential ↗</a>
+                </p>
             </div>
         </div>
 
