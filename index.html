@@ -187,6 +187,18 @@
             font-size: 0.8em;
             margin: 4px 4px 0 0;
         }
+
+        .repo-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .repo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -197,13 +209,13 @@
             <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
             <h1>Edrico Septian Elyazar</h1>
             <div class="subtitle">AI/ML Engineer | Computer Vision | Mathematics</div>
-            <div>Surabaya, Indonesia • <a href="https://github.com/YOUR_GITHUB">GitHub</a> • <a
-                    href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a></div>
+            <div>Surabaya, Indonesia • <a href="https://github.com/Edriczz">GitHub</a> • <a
+                    href="https://linkedin.com/in/edricose">LinkedIn</a></div>
         </header>
 
         <div class="tabs">
             <button class="tab-btn active" onclick="openTab('experience')">Experience & Leadership</button>
-            <button class="tab-btn" onclick="openTab('projects')">Projects</button>
+            <button class="tab-btn" onclick="openTab('projects')">GitHub Repositories</button>
             <button class="tab-btn" onclick="openTab('education')">Education</button>
             <button class="tab-btn" onclick="openTab('certifications')">Certifications</button>
         </div>
@@ -252,23 +264,8 @@
         </div>
 
         <div id="projects" class="tab-content">
-            <div class="card">
-                <h3>Identity-Based Tracking & ReID System</h3>
-                <p>Engineered an advanced visual tracking system that identifies and follows individuals across frames.
-                    Bypassed standard facial feature limitations by utilizing a comprehensive whole-body recognition
-                    approach to maintain consistent identity tracking.</p>
-                <div class="tags">
-                    <span>Computer Vision</span><span>Python</span><span>Biometrics</span><span>ReID</span>
-                </div>
-            </div>
-            <div class="card">
-                <h3>Local IoT Network Integration</h3>
-                <p>Configured and deployed a local MQTT broker using Mosquitto to facilitate efficient IoT data
-                    transmission, integrating physical hardware events with backend processing logic.</p>
-                <div class="tags">
-                    <span>IoT</span><span>MQTT</span><span>Mosquitto</span><span>Linux</span>
-                </div>
-            </div>
+            <p id="loading-text">Fetching latest public repositories from GitHub...</p>
+            <div id="github-repo-container" class="repo-grid"></div>
         </div>
 
         <div id="education" class="tab-content">
@@ -312,6 +309,11 @@
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
             document.getElementById(tabName).classList.add('active');
             event.currentTarget.classList.add('active');
+
+            // Fetch repos only when the projects tab is opened for the first time
+            if (tabName === 'projects' && !window.reposFetched) {
+                fetchGitHubRepos();
+            }
         }
 
         // Theme Toggle Logic
@@ -322,6 +324,44 @@
                 body.removeAttribute('data-theme');
             } else {
                 body.setAttribute('data-theme', 'light');
+            }
+        }
+
+        // GitHub API Fetch Logic
+        async function fetchGitHubRepos() {
+            // REPLACE THIS WITH YOUR ACTUAL GITHUB USERNAME
+            const username = 'Edriczz';
+
+            const container = document.getElementById('github-repo-container');
+            const loadingText = document.getElementById('loading-text');
+
+            try {
+                // Fetch the 4 most recently pushed repositories
+                const response = await fetch(`https://api.github.com/users/${username}/repos?sort=pushed&per_page=4`);
+                if (!response.ok) throw new Error('Network response was not ok');
+                const repos = await response.json();
+
+                loadingText.style.display = 'none';
+                window.reposFetched = true; // Prevent fetching multiple times
+
+                container.innerHTML = repos.map(repo => `
+                <div class="card" style="margin-bottom: 0;">
+                    <h3 style="font-size: 1.1em; margin-bottom: 10px;">
+                        <a href="${repo.html_url}" target="_blank">📦 ${repo.name}</a>
+                    </h3>
+                    <p style="font-size: 0.9em; opacity: 0.8; height: 40px; overflow: hidden; text-overflow: ellipsis;">
+                        ${repo.description || 'No description provided.'}
+                    </p>
+                    <div class="tags" style="margin-top: 10px;">
+                        ${repo.language ? `<span>${repo.language}</span>` : ''}
+                        <span>⭐ ${repo.stargazers_count}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            } catch (error) {
+                loadingText.innerText = 'Could not load repositories at this time. Please check back later.';
+                console.error('Error fetching repos:', error);
             }
         }
     </script>
