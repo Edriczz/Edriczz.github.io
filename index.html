@@ -99,6 +99,8 @@
             font-size: 0.9rem;
             cursor: pointer;
             transition: color 0.2s;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
 
         .nav-btn:hover {
@@ -108,7 +110,6 @@
         .nav-btn.active {
             color: var(--text-primary);
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 4px;
         }
 
         .controls button {
@@ -381,10 +382,10 @@
         <nav>
             <div class="nav-brand">Edrico.</div>
             <div class="nav-links">
-                <button class="nav-btn active" onclick="openTab('bio')">Bio</button>
-                <button class="nav-btn" onclick="openTab('experience')">Experience</button>
-                <button class="nav-btn" onclick="openTab('projects')">Projects</button>
-                <button class="nav-btn" onclick="openTab('education')">Education</button>
+                <button class="nav-btn active" onclick="openTab('bio', this)">Bio</button>
+                <button class="nav-btn" onclick="openTab('experience', this)">Experience</button>
+                <button class="nav-btn" onclick="openTab('projects', this)">Projects</button>
+                <button class="nav-btn" onclick="openTab('education', this)">Education</button>
             </div>
             <div class="controls">
                 <button onclick="toggleTheme()" title="Toggle Dark Mode">🌓</button>
@@ -478,98 +479,103 @@
                     </div>
                     <div class="cards-grid">
                         <div class="card">
-                            <div class="card">
-                                <h4>AI/ML Engineer <span class="date">Jul 2025 – Dec 2025</span></h4>
-                                <div class="subtitle">PT XLSmart Telecom Sejahtera • Internship</div>
-                                <ul>
-                                    <li><strong>FRMS Development:</strong> Engineered the AI Engine for a Face
-                                        Recognition Management System (~83% confidence) using FaceNet and Docker.
-                                        Optimized for high-angle RTSP streams, implementing <strong>MQTT</strong> to
-                                        transfer real-time verification data that seamlessly triggers the automatic door
-                                        unlock system.</li>
-                                    <li><strong>Edge AI Optimization:</strong> Migrated a PPE detection model from
-                                        SSD-MobileNet (<strong>TensorFlow</strong>) to YOLO (<strong>PyTorch</strong>)
-                                        on NVIDIA Jetson Nano. Leveraged TensorRT and engineered a custom frame-skipping
-                                        algorithm to maintain 60 FPS on constrained hardware.</li>
-                                    <li><strong>ReID Tracking:</strong> Utilized Python multiprocessing to implement
-                                        Person Re-identification across non-overlapping camera views.</li>
-                                </ul>
-                                <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span
-                                    class="tag">Computer Vision</span><span class="tag">YOLO</span><span
-                                    class="tag">MQTT</span><span class="tag">TensorRT</span><span
-                                    class="tag">Docker</span><span class="tag">Python</span>
-                            </div>
-                            <div class="card">
-                                <h4>President <span class="date">Dec 2023 – Dec 2024</span></h4>
-                                <div class="subtitle">UKM Bridge ITS • Contract</div>
-                                <ul>
-                                    <li>Led recruitment resulting in 200+ new member sign-ups and supervised competitive
-                                        events yielding 10+ new athletes and 4 medals.</li>
-                                    <li>Achieved >94% Organizational Accomplishments, securing 2nd place for Most
-                                        Outstanding Sports Unit at ITS (Rektor UGM Cup).</li>
-                                    <li>Executed benchmarking networking with regional groups including Airlangga Bridge
-                                        Club.</li>
-                                </ul>
-                                <span class="tag">Leadership</span><span class="tag">Strategic Planning</span>
-                            </div>
+                            <h4>AI/ML Engineer <span class="date">Jul 2025 – Dec 2025</span></h4>
+                            <div class="subtitle">PT XLSmart Telecom Sejahtera • Internship</div>
+                            <ul>
+                                <li><strong>FRMS Development:</strong> Engineered the AI Engine for a Face Recognition
+                                    Management System (~83% confidence) using FaceNet and Docker. Optimized for
+                                    high-angle RTSP streams, implementing <strong>MQTT</strong> to transfer real-time
+                                    verification data that seamlessly triggers the automatic door unlock system.</li>
+                                <li><strong>Edge AI Optimization:</strong> Migrated a PPE detection model from
+                                    SSD-MobileNet (<strong>TensorFlow</strong>) to YOLO (<strong>PyTorch</strong>) on
+                                    NVIDIA Jetson Nano. Leveraged TensorRT and engineered a custom frame-skipping
+                                    algorithm to maintain 60 FPS on constrained hardware.</li>
+                                <li><strong>ReID Tracking:</strong> Utilized Python multiprocessing to implement Person
+                                    Re-identification across non-overlapping camera views.</li>
+                            </ul>
+                            <span class="tag">PyTorch</span><span class="tag">TensorFlow</span><span
+                                class="tag">Computer Vision</span><span class="tag">YOLO</span><span
+                                class="tag">MQTT</span><span class="tag">TensorRT</span><span
+                                class="tag">Docker</span><span class="tag">Python</span>
                         </div>
-                    </div>
 
-                    <div id="projects" class="tab-content">
-                        <div class="section-header">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                            </svg>
-                            <h3>Live Repositories</h3>
+                        <div class="card">
+                            <h4>President <span class="date">Dec 2023 – Dec 2024</span></h4>
+                            <div class="subtitle">UKM Bridge ITS • Contract</div>
+                            <ul>
+                                <li>Led recruitment resulting in 200+ new member sign-ups and supervised competitive
+                                    events yielding 10+ new athletes and 4 medals.</li>
+                                <li>Achieved >94% Organizational Accomplishments, securing 2nd place for Most
+                                    Outstanding Sports Unit at ITS (Rektor UGM Cup).</li>
+                                <li>Executed benchmarking networking with regional groups including Airlangga Bridge
+                                    Club.</li>
+                            </ul>
+                            <span class="tag">Leadership</span><span class="tag">Strategic Planning</span>
                         </div>
-                        <p class="bio-text" id="loading-text" style="font-size: 0.95rem;">Fetching latest data from
-                            GitHub...</p>
-                        <div id="github-repo-container" class="cards-grid two-cols"></div>
                     </div>
+                </div>
 
-                    <div id="education" class="tab-content">
-                        <div class="section-header">
-                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
-                                </path>
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
-                                </path>
-                            </svg>
-                            <h3>Education</h3>
-                        </div>
-                        <div class="cards-grid">
-                            <div class="card">
-                                <h4>Undergraduate Degree, Mathematics <span class="date">2022 – Present</span></h4>
-                                <div class="subtitle">Institut Teknologi Sepuluh Nopember (ITS)</div>
-                                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px;">
-                                    <strong>Thesis Focus:</strong> Dynamic optimization and economic analysis of
-                                    bioethanol
-                                    production using Pontryagin's Maximum Principle. <br><br>
-                                    <strong>Relevant Topics:</strong> Quantitative Analysis, Differential Equations,
-                                    Physics-Informed Neural Networks (PINNs).
-                                </p>
-                            </div>
+                <div id="projects" class="tab-content">
+                    <div class="section-header">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                        </svg>
+                        <h3>Live Repositories</h3>
+                    </div>
+                    <p class="bio-text" id="loading-text" style="font-size: 0.95rem;">Fetching latest data from
+                        GitHub...</p>
+                    <div id="github-repo-container" class="cards-grid two-cols"></div>
+                </div>
+
+                <div id="education" class="tab-content">
+                    <div class="section-header">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                            </path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
+                            </path>
+                        </svg>
+                        <h3>Education</h3>
+                    </div>
+                    <div class="cards-grid">
+                        <div class="card">
+                            <h4>Undergraduate Degree, Mathematics <span class="date">2022 – Present</span></h4>
+                            <div class="subtitle">Institut Teknologi Sepuluh Nopember (ITS)</div>
+                            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px;">
+                                <strong>Thesis Focus:</strong> Dynamic optimization and economic analysis of bioethanol
+                                production using Pontryagin's Maximum Principle. <br><br>
+                                <strong>Relevant Topics:</strong> Quantitative Analysis, Differential Equations,
+                                Physics-Informed Neural Networks (PINNs).
+                            </p>
                         </div>
                     </div>
+                </div>
 
             </main>
         </div>
     </div>
 
     <script>
-        // Tab Navigation Logic
-        function openTab(tabName) {
+        // Bulletproof Tab Navigation Logic
+        function openTab(tabName, btnElement) {
+            // 1. Hide all tabs and remove active state from all buttons
             document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
             document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
 
+            // 2. Show the clicked tab
             document.getElementById(tabName).classList.add('active');
-            event.currentTarget.classList.add('active');
 
+            // 3. Highlight the clicked button
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+
+            // 4. Fetch GitHub repos ONLY if opening the projects tab for the first time
             if (tabName === 'projects' && !window.reposFetched) {
                 fetchGitHubRepos();
             }
@@ -588,7 +594,7 @@
 
         // GitHub Repo Fetch Logic
         async function fetchGitHubRepos() {
-            // REPLACE THIS WITH YOUR GITHUB USERNAME
+            // REPLACE THIS WITH YOUR ACTUAL GITHUB USERNAME
             const username = 'YOUR_GITHUB_USERNAME';
 
             const container = document.getElementById('github-repo-container');
