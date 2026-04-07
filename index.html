@@ -4,110 +4,253 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edrico Septian Elyazar - CV</title>
+    <title>Edrico Septian Elyazar | Portfolio</title>
     <style>
+        :root {
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --accent-color: #58a6ff;
+            --card-bg: #161b22;
+            --border-color: #30363d;
+        }
+
+        [data-theme="light"] {
+            --bg-color: #ffffff;
+            --text-color: #24292f;
+            --accent-color: #0969da;
+            --card-bg: #f6f8fa;
+            --border-color: #d0d7de;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
-            color: #333;
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            position: relative;
         }
 
         h1 {
-            margin-bottom: 0;
-            color: #2c3e50;
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
         }
 
-        h2 {
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
-            margin-top: 30px;
-            color: #2980b9;
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
         }
 
-        p {
-            margin: 5px 0;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-            font-size: 0.9em;
-            color: #555;
-        }
-
-        .job-title {
+        .theme-toggle {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            padding: 8px 16px;
+            border-radius: 6px;
+            cursor: pointer;
             font-weight: bold;
         }
 
+        .tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--text-color);
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 6px;
+            transition: 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--card-bg);
+        }
+
+        .tab-btn.active {
+            border-color: var(--border-color);
+            background: var(--card-bg);
+            font-weight: bold;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            display: flex;
+            justify-content: space-between;
+        }
+
         .date {
-            float: right;
-            font-style: italic;
-            color: #7f8c8d;
+            font-size: 0.85em;
+            color: var(--text-color);
+            opacity: 0.7;
+            font-weight: normal;
         }
 
         ul {
-            margin-top: 5px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .tags span {
+            display: inline-block;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin: 4px 4px 0 0;
         }
     </style>
 </head>
 
 <body>
 
-    <header>
-        <h1>Edrico Septian Elyazar</h1>
-        <div class="contact-info">
-            Surabaya, Indonesia | edrico.email@example.com | <a
-                href="https://github.com/YOUR_GITHUB_USERNAME">GitHub</a> | <a
-                href="https://linkedin.com/in/YOUR_LINKEDIN">LinkedIn</a>
+    <div class="container">
+        <header>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Mode</button>
+            <h1>Edrico Septian Elyazar</h1>
+            <div class="subtitle">Mathematics | Computer Vision | IoT</div>
+            <div>Surabaya, Indonesia • <a href="https://github.com/YOUR_GITHUB"
+                    style="color: var(--accent-color);">GitHub</a></div>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('experience')">Experience</button>
+            <button class="tab-btn" onclick="openTab('projects')">Projects</button>
+            <button class="tab-btn" onclick="openTab('education')">Education</button>
         </div>
-    </header>
 
-    <section>
-        <h2>Education</h2>
-        <p><span class="job-title">Institut Teknologi Sepuluh Nopember (ITS)</span> <span class="date">2022 –
-                Present</span></p>
-        <p>Undergraduate Degree in Mathematics</p>
-        <ul>
-            <li><strong>Undergraduate Thesis:</strong> Dynamic optimization and economic analysis of bioethanol
-                production using Pontryagin's Maximum Principle.</li>
-        </ul>
-    </section>
+        <div id="experience" class="tab-content active">
+            <div class="card">
+                <h3>PT XLSmart Telecom Sejahtera Tbk <span class="date">Aug 2025 – Jan 2026</span></h3>
+                <p><strong>Intern</strong></p>
+                <ul>
+                    <li>Developed a computer vision system to automate Personal Protective Equipment (PPE) detection.
+                    </li>
+                    <li>Configured and deployed a local MQTT broker using Mosquitto to facilitate efficient IoT data
+                        transmission.</li>
+                    <li>Recreated and documented the local broker implementation for technical reporting.</li>
+                </ul>
+            </div>
+        </div>
 
-    <section>
-        <h2>Experience</h2>
-        <p><span class="job-title">PT XLSmart Telecom Sejahtera Tbk</span> — <em>Intern</em> <span class="date">Aug 2025
-                – Jan 2026</span></p>
-        <ul>
-            <li>Developed a computer vision system for Personal Protective Equipment (PPE) detection.</li>
-            <li>Configured and managed a local MQTT broker (Mosquitto) for IoT data transmission.</li>
-        </ul>
-    </section>
+        <div id="projects" class="tab-content">
+            <div class="card">
+                <h3>Identity-Based Tracking System</h3>
+                <p>Engineered an advanced visual tracking system that identifies and follows individuals across frames.
+                    Bypassed standard facial feature limitations by utilizing a comprehensive whole-body recognition
+                    approach.</p>
+                <div class="tags">
+                    <span>Computer Vision</span><span>Python</span><span>Biometrics</span>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Object Detection Engineering</h3>
+                <p>Implemented and tested various continuous object tracking solutions, heavily utilizing YOLO
+                    architectures within an Ubuntu Linux environment.</p>
+                <div class="tags">
+                    <span>YOLO</span><span>Ubuntu</span><span>Object Tracking</span>
+                </div>
+            </div>
+        </div>
 
-    <section>
-        <h2>Projects</h2>
-        <p><span class="job-title">Identity-Based Tracking System</span></p>
-        <ul>
-            <li>Engineered a tracking system utilizing whole-body recognition rather than standard facial features to
-                identify and track individuals across frames.</li>
-        </ul>
-        <p><span class="job-title">Object Detection & Computer Vision</span></p>
-        <ul>
-            <li>Implemented various object tracking solutions using YOLO models within Ubuntu/Linux environments.</li>
-        </ul>
-    </section>
+        <div id="education" class="tab-content">
+            <div class="card">
+                <h3>Institut Teknologi Sepuluh Nopember (ITS) <span class="date">2022 – Present</span></h3>
+                <p><strong>Undergraduate Degree, Mathematics</strong></p>
+                <ul>
+                    <li><strong>Thesis Focus:</strong> Dynamic optimization and economic analysis of bioethanol
+                        production using Pontryagin's Maximum Principle.</li>
+                    <li><strong>Relevant Topics:</strong> Quantitative Analysis, Differential Equations,
+                        Physics-Informed Neural Networks (PINNs).</li>
+                </ul>
+            </div>
+        </div>
 
-    <section>
-        <h2>Technical Skills</h2>
-        <ul>
-            <li><strong>Programming & Tools:</strong> Python, C, Git</li>
-            <li><strong>AI & Data Science:</strong> Computer Vision, YOLO, Physics-Informed Neural Networks (PINNs),
-                GEKKO, Z3</li>
-            <li><strong>Systems & Protocols:</strong> Linux (Ubuntu/CachyOS), IoT, MQTT (Mosquitto)</li>
-            <li><strong>Mathematics:</strong> Quantitative Analysis, Dynamic Optimization, Differential Equations</li>
-        </ul>
-    </section>
+    </div>
+
+    <script>
+        // Tab Switching Logic
+        function openTab(tabName) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        // Theme Toggle Logic
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                body.removeAttribute('data-theme');
+            } else {
+                body.setAttribute('data-theme', 'light');
+            }
+        }
+    </script>
 
 </body>
 
