@@ -483,11 +483,13 @@
                             <div class="subtitle">PT XLSmart Telecom Sejahtera • Internship</div>
                             <ul>
                                 <li><strong>FRMS Development:</strong> Engineered the AI Engine for a Face Recognition
-                                    Management System (~83% confidence) using FaceNet and Docker. Optimized for
+                                    Management System (~83% confidence) using FaceNet (TensorFlow) and Docker. Optimized
+                                    for
                                     high-angle RTSP streams, implementing <strong>MQTT</strong> to transfer real-time
                                     verification data that seamlessly triggers the automatic door unlock system.</li>
                                 <li><strong>Edge AI Optimization:</strong> Migrated a PPE detection model from
-                                    SSD-MobileNet (<strong>TensorFlow</strong>) to YOLO (<strong>PyTorch</strong>) on
+                                    SSD-MobileNet (<strong>Jetson Inference</strong>) to YOLO (<strong>PyTorch</strong>)
+                                    on
                                     NVIDIA Jetson Nano. Leveraged TensorRT and engineered a custom frame-skipping
                                     algorithm to maintain 60 FPS on constrained hardware.</li>
                                 <li><strong>ReID Tracking:</strong> Utilized Python multiprocessing to implement Person
@@ -516,45 +518,92 @@
                 </div>
 
                 <div id="projects" class="tab-content">
-                    <div class="section-header">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                        </svg>
-                        <h3>Live Repositories</h3>
-                    </div>
-                    <p class="bio-text" id="loading-text" style="font-size: 0.95rem;">Fetching latest data from
-                        GitHub...</p>
-                    <div id="github-repo-container" class="cards-grid two-cols"></div>
-                </div>
+                    <div id="projects" class="tab-content">
+                        <div class="section-header">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                            </svg>
+                            <h3>Featured Projects & Research</h3>
+                        </div>
 
-                <div id="education" class="tab-content">
-                    <div class="section-header">
-                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l9-5-9-5-9 5 9 5z"></path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
-                            </path>
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
-                            </path>
-                        </svg>
-                        <h3>Education</h3>
-                    </div>
-                    <div class="cards-grid">
-                        <div class="card">
-                            <h4>Undergraduate Degree, Mathematics <span class="date">2022 – Present</span></h4>
-                            <div class="subtitle">Institut Teknologi Sepuluh Nopember (ITS)</div>
-                            <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px;">
-                                <strong>Thesis Focus:</strong> Dynamic optimization and economic analysis of bioethanol
-                                production using Pontryagin's Maximum Principle. <br><br>
-                                <strong>Relevant Topics:</strong> Quantitative Analysis, Differential Equations,
-                                Physics-Informed Neural Networks (PINNs).
-                            </p>
+                        <div class="cards-grid two-cols">
+                            <div class="card">
+                                <h4 style="margin-bottom: 8px;">Identity-Based ReID System</h4>
+                                <p
+                                    style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 15px;">
+                                    Engineered an advanced tracking system bypassing standard facial limitations.
+                                    Utilized a whole-body recognition approach to maintain consistent identity tracking
+                                    across frames.
+                                </p>
+                                <span class="tag">Computer Vision</span><span class="tag">PyTorch</span><span
+                                    class="tag">Python</span>
+                            </div>
+
+                            <div class="card">
+                                <h4 style="margin-bottom: 8px;">Quantitative Financial Data Pipeline</h4>
+                                <p
+                                    style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 15px;">
+                                    Engineered an automated data extraction pipeline utilizing the Yahoo Finance API to
+                                    aggregate, clean, and structure historical stock market data for quantitative
+                                    modeling and economic analysis.
+                                </p>
+                                <span class="tag">Data Engineering</span><span class="tag">Python</span><span
+                                    class="tag">Pandas</span><span class="tag">Quantitative Finance</span>
+                            </div>
+
+
+                            <div class="card">
+                                <h4 style="margin-bottom: 8px;">Bioethanol Dynamic Optimization</h4>
+                                <p
+                                    style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 15px;">
+                                    Mathematical modeling utilizing Pontryagin's Maximum Principle to optimize the
+                                    economic output and production processes of bioethanol systems.
+                                </p>
+                                <span class="tag">Mathematics</span><span class="tag">Differential Equations</span><span
+                                    class="tag">Quantitative</span>
+                            </div>
+
+                            <div class="card">
+                                <h4 style="margin-bottom: 8px;">Local IoT MQTT Broker</h4>
+                                <p
+                                    style="font-size: 0.9rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 15px;">
+                                    Configured a local Mosquitto broker network to handle lightweight, real-time message
+                                    brokering for complex physical hardware trigger events.
+                                </p>
+                                <span class="tag">MQTT</span><span class="tag">Mosquitto</span><span
+                                    class="tag">Linux</span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div id="education" class="tab-content">
+                        <div class="section-header">
+                            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z">
+                                </path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222">
+                                </path>
+                            </svg>
+                            <h3>Education</h3>
+                        </div>
+                        <div class="cards-grid">
+                            <div class="card">
+                                <h4>Undergraduate Degree, Mathematics <span class="date">2022 – Present</span></h4>
+                                <div class="subtitle">Institut Teknologi Sepuluh Nopember (ITS)</div>
+                                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 10px;">
+                                    <strong>Thesis Focus:</strong> Dynamic optimization and economic analysis of
+                                    bioethanol
+                                    production using Pontryagin's Maximum Principle. <br><br>
+                                    <strong>Relevant Topics:</strong> Quantitative Analysis, Differential Equations,
+                                    Physics-Informed Neural Networks (PINNs).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
 
             </main>
         </div>
