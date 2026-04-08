@@ -624,10 +624,7 @@
                 btnElement.classList.add('active');
             }
 
-            // 4. Fetch GitHub repos ONLY if opening the projects tab for the first time
-            if (tabName === 'projects' && !window.reposFetched) {
-                fetchGitHubRepos();
-            }
+
         }
 
         // Theme Toggle Logic
