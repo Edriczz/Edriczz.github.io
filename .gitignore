@@ -1,4 +1,13 @@
+# Personal photos (only edrico3.jpg is committed for portfolio use)
 edrico.jpg
 edrico1.jpg
 edrico2.jpg
 
+# LaTeX build artifacts
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+*.pdf
