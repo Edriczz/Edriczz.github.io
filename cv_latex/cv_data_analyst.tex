@@ -1,0 +1,115 @@
+\documentclass[11pt, letterpaper]{article}
+
+% ATS-friendly encoding for proper PDF text extraction
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ATS-friendly margins
+\usepackage[margin=0.75in]{geometry}
+
+% Hyperlinks with embedded PDF metadata for ATS identification
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdfauthor={Edrico Septian Elyazar},
+    pdftitle={Edrico Septian Elyazar - Data Analyst Resume}
+]{hyperref}
+
+\usepackage{enumitem}
+
+% Disable paragraph indentation and set spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% Remove page numbers for a clean look
+\pagestyle{empty}
+
+% ATS-friendly section command with horizontal rule separator
+\newcommand{\cvsection}[1]{%
+    \vspace{0.8em}%
+    {\large \textbf{\MakeUppercase{#1}}}%
+    \vspace{0.2em}%
+    \hrule height 0.5pt%
+    \vspace{0.4em}%
+}
+
+\begin{document}
+
+% --- CONTACT INFORMATION ---
+\begin{center}
+    {\Huge \textbf{Edrico Septian Elyazar}} \\ \vspace{0.3em}
+    Kota Tangerang, Indonesia | +62-851-5547-6561 \\ \vspace{0.3em}
+    \href{mailto:edricoseptian@gmail.com}{\nolinkurl{edricoseptian@gmail.com}} |
+    \href{https://linkedin.com/in/edricose}{linkedin.com/in/edricose} |
+    \href{https://github.com/Edriczz}{github.com/Edriczz}
+\end{center}
+
+% --- PROFESSIONAL SUMMARY ---
+\cvsection{Professional Summary}
+Data Analyst with a strong mathematical foundation and Google-certified competencies in data cleaning, analysis, visualization, and SQL via BigQuery. Mathematics fresh graduate from Institut Teknologi Sepuluh Nopember (ITS) experienced in building automated data pipelines, performing quantitative analysis, and translating complex datasets into actionable insights using Python, R, Tableau, and Spreadsheets. Proven ability to engineer end-to-end data workflows in production environments. Additional expertise in statistical modeling, quantitative finance, and mathematical optimization.
+
+% --- WORK EXPERIENCE ---
+\cvsection{Work Experience}
+\textbf{AI/ML Engineer Intern} | PT XLSmart Telecom Sejahtera \hfill Jul 2025 -- Dec 2025
+\begin{itemize}[leftmargin=*, nosep]
+    \item Collected, cleaned, and analyzed real-time streaming data from multiple RTSP camera feeds to validate model accuracy metrics, achieving approximately 83\% confidence on facial recognition benchmarks.
+    \item Designed and implemented data transfer pipelines using MQTT protocols to aggregate real-time verification data from distributed edge devices for centralized analysis.
+    \item Conducted comparative performance analysis between SSD-MobileNet (TensorFlow) and YOLO (PyTorch) detection models, evaluating accuracy, latency, and resource utilization metrics to inform deployment decisions.
+    \item Analyzed hardware performance data to identify bottlenecks and optimized inference throughput to maintain 60 FPS, documenting findings through structured performance reports.
+    \item Built an identity tracking data pipeline utilizing Python multiprocessing, processing data across non-overlapping camera views to maintain consistent person re-identification records.
+\end{itemize}
+
+% --- EDUCATION ---
+\cvsection{Education}
+\textbf{Institut Teknologi Sepuluh Nopember (ITS)} \hfill 2022 -- 2026 \\
+Bachelor of Science in Mathematics \hfill \textbf{GPA: 3.44 / 4.00}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Thesis:} Dynamic optimization and economic analysis of bioethanol production using Pontryagin's Maximum Principle.
+    \item \textbf{Relevant Coursework:} Statistics, Derivative Markets, Differential Equations, Optimization Methods, Artificial Intelligence, Data Analysis.
+\end{itemize}
+
+% --- PROJECTS ---
+\cvsection{Projects}
+\textbf{Quantitative Financial Data Pipeline} \hfill \href{https://github.com/Edriczz/derivative_math.git}{[GitHub Repository]}
+\begin{itemize}[leftmargin=*, nosep]
+    \item Built an automated data extraction pipeline utilizing the Yahoo Finance API to aggregate, clean, and structure historical stock market data for quantitative modeling using Python and Pandas.
+    \item Performed exploratory data analysis (EDA) on financial time-series data, generating statistical summaries and visualizations for derivative pricing research.
+\end{itemize}
+
+\textbf{Helomet-Recreate (PPE Detection Analytics)} \hfill \href{https://github.com/Edriczz/helomet-recreate.git}{[GitHub Repository]}
+\begin{itemize}[leftmargin=*, nosep]
+    \item Developed a detection pipeline to evaluate workplace safety compliance data, analyzing PPE usage patterns and generating compliance metrics reports.
+\end{itemize}
+
+% --- LICENSES & CERTIFICATIONS ---
+\cvsection{Licenses \& Certifications}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Google Data Analytics Professional Certificate} | Coursera \hfill
+        \href{https://www.coursera.org/account/accomplishments/professional-cert/certificate/V0X92BL0CM9Y}{\textit{View Credential}} \\
+        Completed 8-course program covering data cleaning, analysis, and visualization using Spreadsheets, SQL (BigQuery), Tableau, and R.
+    \item \textbf{Intro to Machine Learning} | Kaggle \hfill
+        \href{https://www.kaggle.com/learn/certification/edricoseptianelyazar/intro-to-machine-learning}{\textit{View Credential}}
+    \item \textbf{Python} | Kaggle \hfill
+        \href{https://www.kaggle.com/learn/certification/edricoseptianelyazar/python}{\textit{View Credential}}
+\end{itemize}
+
+% --- LEADERSHIP EXPERIENCE ---
+\cvsection{Leadership Experience}
+\textbf{President} | UKM Bridge ITS \hfill Dec 2023 -- Dec 2024
+\begin{itemize}[leftmargin=*, nosep]
+    \item Directed recruitment initiatives resulting in over 200 new member sign-ups and supervised competitive events yielding 10+ new athletes and 4 medals.
+    \item Attained over 94\% Organizational Accomplishments, leading the unit to secure 2nd place for Most Outstanding Sports Unit at ITS.
+    \item Executed benchmarking and networking strategies with regional organizations, including the Airlangga Bridge Club.
+\end{itemize}
+
+% --- SKILLS ---
+\cvsection{Skills}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Data Analysis:} SQL (BigQuery), Python, R, Pandas, NumPy, Spreadsheets (Google Sheets, Excel)
+    \item \textbf{Data Visualization:} Tableau, Matplotlib, Seaborn
+    \item \textbf{Tools \& Technologies:} Docker, Linux, Git, Jupyter Notebook
+    \item \textbf{Core Competencies:} Data Cleaning, Exploratory Data Analysis (EDA), Statistical Analysis, Data Pipelines, Quantitative Finance, Mathematical Modeling
+\end{itemize}
+
+\end{document}

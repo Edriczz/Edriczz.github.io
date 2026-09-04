@@ -1,8 +1,22 @@
 \documentclass[11pt, letterpaper]{article}
 
-% ATS-friendly margins and links
+% ATS-friendly encoding for proper PDF text extraction
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% ATS-friendly margins
 \usepackage[margin=0.75in]{geometry}
-\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue]{hyperref}
+
+% Hyperlinks with embedded PDF metadata for ATS identification
+\usepackage[
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    pdfauthor={Edrico Septian Elyazar},
+    pdftitle={Edrico Septian Elyazar - AI/ML Engineer Resume},
+    pdfkeywords={AI, ML, Linux, Edge AI, Computer Vision}
+]{hyperref}
+
 \usepackage{enumitem}
 
 % Disable paragraph indentation and set spacing
@@ -12,50 +26,52 @@
 % Remove page numbers for a clean look
 \pagestyle{empty}
 
+% ATS-friendly section command with horizontal rule separator
+\newcommand{\cvsection}[1]{%
+    \vspace{0.8em}%
+    {\large \textbf{\MakeUppercase{#1}}}%
+    \vspace{0.2em}%
+    \hrule height 0.5pt%
+    \vspace{0.4em}%
+}
+
 \begin{document}
 
 % --- CONTACT INFORMATION ---
 \begin{center}
-    {\Huge \textbf{Edrico Septian Elyazar}} \\ \vspace{0.5em}
-    \textbf{AI/ML Engineer} \\ \vspace{0.5em}
-    \href{mailto:edricoseptian@gmail.com}{edricoseptian@gmail.com} |
+    {\Huge \textbf{Edrico Septian Elyazar}} \\ \vspace{0.3em}
+    Kota Tangerang, Indonesia | +62-851-5547-6561 \\ \vspace{0.3em}
+    \href{mailto:edricoseptian@gmail.com}{\nolinkurl{edricoseptian@gmail.com}} |
     \href{https://linkedin.com/in/edricose}{linkedin.com/in/edricose} |
     \href{https://github.com/Edriczz}{github.com/Edriczz}
 \end{center}
 
+% --- PROFESSIONAL SUMMARY ---
+\cvsection{Professional Summary}
+AI/ML Engineer with hands-on experience in Edge AI deployment, computer vision, and real-time systems optimization across Linux and Docker environments. Mathematics fresh graduate from Institut Teknologi Sepuluh Nopember (ITS) with certified competencies in data analytics, SQL (BigQuery), and machine learning. Proficient in containerizing and deploying AI services with Docker on Linux systems, engineering production-grade inference pipelines using TensorRT and MQTT. Additional expertise in quantitative finance, mathematical optimization, and differential equations.
 
-% --- SUMMARY ---
-\section*{Summary}
-Mathematics undergraduate at Institut Teknologi Sepuluh Nopember (ITS) with a profound interest in Artificial Intelligence and Machine Learning, supported by hands-on experience in computer vision and IoT architecture thinking. Experienced in engineering Edge AI solutions, developing automated tracking systems, and optimizing real-time physical hardware deployments using pub/sub protocols like MQTT. Passionate about bridging the gap between mathematical logic, software engineering, and hardware execution.Beyond core AI development, my professional interests extend to quantitative finance, mathematical optimization, and analyzing foundational technology infrastructure. 
-
-% --- EXPERIENCE ---
-\section*{Experience}
-\textbf{PT XLSmart Telecom Sejahtera} | AI/ML Engineer Intern \hfill (Jul 2025 -- Dec 2025)
+% --- WORK EXPERIENCE ---
+\cvsection{Work Experience}
+\textbf{AI/ML Engineer Intern} | PT XLSmart Telecom Sejahtera \hfill Jul 2025 -- Dec 2025
 \begin{itemize}[leftmargin=*, nosep]
-    \item Engineered an AI engine for a Face Recognition Management System achieving ~83\% confidence utilizing FaceNet and Docker.
-    \item Implemented MQTT protocols for high-angle RTSP streams to transfer real-time verification data, automating physical door unlock mechanisms.
-    \item Migrated a PPE detection model from SSD-MobileNet (TensorFlow) to YOLO (PyTorch) for streamlined deployment on an NVIDIA Jetson Nano.
-    \item Optimized edge computing performance to maintain 60 FPS on constrained hardware by leveraging TensorRT and developing a custom frame-skipping algorithm.
-    \item Deployed an advanced Person Re-identification tracking system utilizing Python multiprocessing and a whole-body recognition approach in PyTorch to maintain consistent identity tracking across non-overlapping camera views, bypassing standard facial recognition limitations.
-\end{itemize}
-
-\textbf{UKM Bridge ITS} | President \hfill (Dec 2023 -- Dec 2024)
-\begin{itemize}[leftmargin=*, nosep]
-    \item Directed recruitment initiatives resulting in over 200 new member sign-ups and supervised competitive events yielding 10+ new athletes and 4 medals.
-    \item Attained over 94\% Organizational Accomplishments, leading the unit to secure 2nd place for Most Outstanding Sports Unit at ITS.
-    \item Executed benchmarking and networking strategies with regional organizations, including the Airlangga Bridge Club.
+    \item Engineered a Dockerized AI engine for a Face Recognition Management System, achieving approximately 83\% confidence using FaceNet; deployed and managed on an Ubuntu Linux server.
+    \item Implemented MQTT protocols for high-angle RTSP streams to transfer real-time verification data, orchestrating Docker containers and Linux service daemons to automate physical door unlock mechanisms.
+    \item Migrated a PPE detection model from SSD-MobileNet (TensorFlow) to YOLO (PyTorch), packaging the inference stack in Docker for streamlined deployment on an NVIDIA Jetson Nano (L4T/Ubuntu Linux).
+    \item Optimized edge computing performance to maintain 60 FPS on constrained hardware by leveraging TensorRT within a Docker environment and developing a custom frame-skipping algorithm.
+    \item Deployed a Person Re-identification tracking system using Python multiprocessing in a Linux/Docker environment, employing a whole-body recognition approach in PyTorch to maintain consistent identity across non-overlapping camera views.
 \end{itemize}
 
 % --- EDUCATION ---
-\section*{Education}
-\textbf{Institut Teknologi Sepuluh Nopember (ITS)} | Undergraduate Degree, Mathematics \hfill (2022 -- Present)
+\cvsection{Education}
+\textbf{Institut Teknologi Sepuluh Nopember (ITS)} \hfill 2022 -- 2026 \\
+Bachelor of Science in Mathematics \hfill \textbf{GPA: 3.44 / 4.00}
 \begin{itemize}[leftmargin=*, nosep]
-    \item \textbf{Thesis Focus:} Dynamic optimization and economic analysis of bioethanol production using Pontryagin's Maximum Principle.
-    \item \textbf{Relevant Coursework:} Quantitative Analysis, Differential Equations, Physics-Informed Neural Networks (PINNs).
+    \item \textbf{Thesis:} Dynamic optimization and economic analysis of bioethanol production using Pontryagin's Maximum Principle.
+    \item \textbf{Relevant Coursework:} Derivative Markets, Differential Equations, Optimization Methods, Physics-Informed Neural Networks (PINNs), Artificial Intelligence.
 \end{itemize}
 
 % --- PROJECTS ---
-\section*{Projects}
+\cvsection{Projects}
 \textbf{Helomet-Recreate (PPE Detection)} \hfill \href{https://github.com/Edriczz/helomet-recreate.git}{[GitHub Repository]}
 \begin{itemize}[leftmargin=*, nosep]
     \item Developed a Personal Protective Equipment (PPE) detection pipeline utilizing YOLO to evaluate workplace safety compliance, originally engineered for technical internship reporting and edge hardware optimization.
@@ -66,13 +82,34 @@ Mathematics undergraduate at Institut Teknologi Sepuluh Nopember (ITS) with a pr
     \item Built an automated data extraction pipeline utilizing the Yahoo Finance API to aggregate, clean, and structure historical stock market data for quantitative modeling using Python and Pandas.
 \end{itemize}
 
-% --- SKILLS ---
-\section*{Skills}
+% --- LEADERSHIP EXPERIENCE ---
+\cvsection{Leadership Experience}
+\textbf{President} | UKM Bridge ITS \hfill Dec 2023 -- Dec 2024
 \begin{itemize}[leftmargin=*, nosep]
-    \item \textbf{Languages \& Frameworks:} Python, PyTorch, TensorFlow, Pandas, NumPy, CuPy
-    \item \textbf{Tools \& Technologies:} Docker, MQTT, TensorRT, Linux
-    \item \textbf{Core Competencies:} Computer Vision, Edge AI, Quantitative Finance, Mathematical Modeling, Differential Equations
-    \item \textbf{Certifications:} Google Data Analytics Professional Certificate (Coursera), Intro to Machine Learning (Kaggle)
+    \item Directed recruitment initiatives resulting in over 200 new member sign-ups and supervised competitive events yielding 10+ new athletes and 4 medals.
+    \item Attained over 94\% Organizational Accomplishments, leading the unit to secure 2nd place for Most Outstanding Sports Unit at ITS.
+    \item Executed benchmarking and networking strategies with regional organizations, including the Airlangga Bridge Club.
+\end{itemize}
+
+% --- LICENSES & CERTIFICATIONS ---
+\cvsection{Licenses \& Certifications}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Google Data Analytics Professional Certificate} | Coursera \hfill
+        \href{https://www.coursera.org/account/accomplishments/professional-cert/certificate/V0X92BL0CM9Y}{\textit{View Credential}} \\
+        Focused on data cleaning, analysis, and visualization using Spreadsheets, SQL (BigQuery), Tableau, and R.
+    \item \textbf{Intro to Machine Learning} | Kaggle \hfill
+        \href{https://www.kaggle.com/learn/certification/edricoseptianelyazar/intro-to-machine-learning}{\textit{View Credential}}
+    \item \textbf{Python} | Kaggle \hfill
+        \href{https://www.kaggle.com/learn/certification/edricoseptianelyazar/python}{\textit{View Credential}}
+\end{itemize}
+
+% --- SKILLS ---
+\cvsection{Skills}
+\begin{itemize}[leftmargin=*, nosep]
+    \item \textbf{Languages \& Frameworks:} Python, R, PyTorch, TensorFlow, Pandas, NumPy, CuPy
+    \item \textbf{Linux \& Docker:} Ubuntu/Debian, Docker, Docker Compose, Bash Scripting, systemd, SSH, Git
+    \item \textbf{Tools \& Technologies:} TensorRT, MQTT, SQL (BigQuery), Tableau, Spreadsheets, NVIDIA Jetson (L4T)
+    \item \textbf{Core Competencies:} Computer Vision, Edge AI, Containerization, Data Analytics, Quantitative Finance, Mathematical Modeling
 \end{itemize}
 
 \end{document}
