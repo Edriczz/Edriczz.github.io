@@ -1,0 +1,76 @@
+BEGIN:VCALENDAR
+METHOD:REQUEST
+PRODID:Microsoft Exchange Server 2010
+VERSION:2.0
+BEGIN:VTIMEZONE
+TZID:SE Asia Standard Time
+BEGIN:STANDARD
+DTSTART:16010101T000000
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+END:STANDARD
+BEGIN:DAYLIGHT
+DTSTART:16010101T000000
+TZOFFSETFROM:+0700
+TZOFFSETTO:+0700
+END:DAYLIGHT
+END:VTIMEZONE
+BEGIN:VEVENT
+ORGANIZER;CN=NON PERSONAL O365.HCS.1:mailto:O365.HCS.1@bankbsi.co.id
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=edricosept
+ ian@gmail.com:mailto:edricoseptian@gmail.com
+ATTENDEE;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=TRUE;CN=ALIKA INDH
+ A RATRI KIRANA:mailto:alika.kirana@bankbsi.co.id
+DESCRIPTION;LANGUAGE=en-US:Assalamu’alaikum Wr. Wb.\n\nKandidat Peserta P
+ emagangan Sdr/i. Edrico Septian Elyazar\,\n\nTerima kasih atas partisipasi
+  Anda dalam proses rekrutmen Program Pemagangan Nasional Batch 2 Angkatan 
+ 2 di PT Bank Syariah Indonesia Tbk.\n\nSehubungan dengan proses seleksi ya
+ ng sedang berlangsung\, kami mengundang Anda untuk mengikuti tahap Intervi
+ ew Offline sebagai bagian dari rangkaian seleksi Program Pemagangan Nasion
+ al.\n\nBerikut informasi pelaksanaan interview:\n\nHari/Tanggal : Kamis\, 
+ 10 September 2026\nWaktu : 14:00 WIB\nLokasi : The Tower by Alam Sutera - 
+ Lantai 28 - https://maps.app.goo.gl/WQUJPNAGzwKsttGQ9\nDress Code : Formal
+  Office Look\n\nPerson in Charge (PIC) : Alika Indha Ratri Kirana - alika.
+ kirana@bankbsi.co.id - Unit Kerja HCS\n\nHarap untuk klik Yes pada calenda
+ r invitation di atas sebagai konfirmasi kehadiran.\n\nMohon untuk membawa 
+ laptop pribadi (Jika ada).\n\nMohon hadir 15 menit sebelum jadwal intervie
+ w untuk proses registrasi. Selama mengikuti proses seleksi\, peserta dihar
+ apkan mengenakan pakaian yang rapi dan profesional.\n\nApabila Anda berhal
+ angan hadir atau memerlukan informasi lebih lanjut terkait pelaksanaan int
+ erview\, mohon segera menghubungi PIC agar dapat dilakukan tindak lanjut s
+ esuai ketentuan yang berlaku.\n\nDemikian undangan ini kami sampaikan. Ata
+ s perhatian dan kerja sama yang baik\, kami ucapkan terima kasih.\n\nWassa
+ lamu’alaikum Wr. Wb.\n\nHormat kami\,\nHuman Capital Services\nPT Bank S
+ yariah Indonesia (Persero) Tbk.\n
+UID:040000008200E00074C5B7101A82E008000000002B5149CE1640DD01000000000000000
+ 0100000000999D0CCCBC2AD41835B84291B32A479
+SUMMARY;LANGUAGE=en-US:Interview Offline MagangHub Batch 2 Angkatan 2 - Uni
+ t Kerja HCS - PT Bank Syariah Indonesia (Persero) Tbk 
+DTSTART;TZID=SE Asia Standard Time:20260910T140000
+DTEND;TZID=SE Asia Standard Time:20260910T143000
+CLASS:PUBLIC
+PRIORITY:9
+DTSTAMP:20260909T045059Z
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+SEQUENCE:1
+LOCATION;LANGUAGE=en-US:
+X-MICROSOFT-CDO-APPT-SEQUENCE:1
+X-MICROSOFT-CDO-OWNERAPPTID:2125023721
+X-MICROSOFT-CDO-BUSYSTATUS:FREE
+X-MICROSOFT-CDO-INTENDEDSTATUS:FREE
+X-MICROSOFT-CDO-ALLDAYEVENT:FALSE
+X-MICROSOFT-CDO-IMPORTANCE:0
+X-MICROSOFT-CDO-INSTTYPE:0
+X-MICROSOFT-DONOTFORWARDMEETING:FALSE
+X-MICROSOFT-DISALLOW-COUNTER:FALSE
+X-MICROSOFT-REQUESTEDATTENDANCEMODE:DEFAULT
+X-MICROSOFT-ISRESPONSEREQUESTED:TRUE
+X-MICROSOFT-LOCATIONS:[]
+BEGIN:VALARM
+DESCRIPTION:REMINDER
+TRIGGER;RELATED=START:-PT15M
+ACTION:DISPLAY
+END:VALARM
+END:VEVENT
+END:VCALENDAR
